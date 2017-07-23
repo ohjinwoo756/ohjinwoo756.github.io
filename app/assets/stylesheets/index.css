@@ -1,0 +1,10 @@
+.card_select {
+    display: flex;
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+}
+
