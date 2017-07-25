@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1>카드 혜택 상세보기</h1>
+  <%= flash[:alert] %>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p>카드사 <%=@card.card_id%></p>
+    <h3 class="panel-title">카드이름 <%=@card.card_name%></h3>
+  </div>
+  <div class="panel-body">
+    상세 카드 혜택: <%=@card.content%>
+  </div>
+  
+    <div class="container">
+       <%= image_tag @card.avatar.url %>
+    </div>
+    
+ 
+      <%= link_to '수정', edit_card_path(@card), class: "btn btn-default btn-sm"%>
+      <%= link_to '삭제', card_path(@card), method: :delete, data: {confirm: "정말 삭제하시겠습니까?"}, class: "btn btn-default btn-sm"%>
+  
+</div>

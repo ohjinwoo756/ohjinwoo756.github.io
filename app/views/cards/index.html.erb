@@ -7,50 +7,140 @@
   <div class="card_select container col s6 offset-s6">
     <ul id="tabs-swipe-demo" class="tabs">
       <div class="card_1">
-        <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-        <li class="tab col s3"><a href="#test-swipe-2">Test 2</a></li>
-        <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
-        <li class="tab col s3"><a href="#test-swipe-4">Test 4</a></li>
-        <li class="tab col s3"><a href="#test-swipe-5">Test 5</a></li>
-        <li class="tab col s3"><a href="#test-swipe-6">Test 6</a></li>
+        <li class="tab col s3"><a href="#test-swipe-1">KB국민</a></li>
+        <li class="tab col s3"><a href="#test-swipe-2">신한</a></li>
+        <li class="tab col s3"><a href="#test-swipe-3">삼성</a></li>
+        <li class="tab col s3"><a href="#test-swipe-4">롯데</a></li>
+        <li class="tab col s3"><a href="#test-swipe-5">현대</a></li>
+        <li class="tab col s3"><a href="#test-swipe-6">씨티</a></li>
       </div>
       <div class="card_2">
-        <li class="tab col s3"><a href="#test-swipe-7">Test 7</a></li>
-        <li class="tab col s3"><a href="#test-swipe-8">Test 8</a></li>
-        <li class="tab col s3"><a href="#test-swipe-9">Test 9</a></li>
-        <li class="tab col s3"><a href="#test-swipe-10">Test 10</a></li>
-        <li class="tab col s3"><a href="#test-swipe-11">Test 11</a></li>
-        <li class="tab col s3"><a href="#test-swipe-12">Test 12</a></li>
+        <li class="tab col s3"><a href="#test-swipe-7">하나</a></li>
+        <li class="tab col s3"><a href="#test-swipe-8">우리</a></li>
+        <li class="tab col s3"><a href="#test-swipe-9">NH농협</a></li>
+        <li class="tab col s3"><a href="#test-swipe-10">IBK기업</a></li>
       </div>
     </ul>
   </div>
   
-  <div class="empty">
-    a
-  </div>
+      <div class="jumbotron">
+        <%= link_to "새로운 카드 정보 등록", new_card_path, class: "btn btn-primary btn-lg" %>
+      </div>
+  
+
 
   <!--카드사 선택하면 나오는 카드들-->
   <div class="card_selected">
     <div id="test-swipe-1" class="col s12">
-      <div class="carousel">
-        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1" alt="1"></a>
-        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2" alt="1"></a>
-        <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3" alt="1"></a>
-        <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4" alt="1"></a>
-        <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5" alt="1"></a>
-      </div>
+        <div class="list-group">
+         <% @cards.where(card_id:'KB국민').find_each do |card| %>
+              
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+           <% end %>
+        </div>
     </div>
-    <div id="test-swipe-2" class="col s12 red">Test 2</div>
-    <div id="test-swipe-3" class="col s12 green">Test 3</div>
-    <div id="test-swipe-4" class="col s12 black">Test 4</div>
-    <div id="test-swipe-5" class="col s12 orange">Test 5</div>
-    <div id="test-swipe-6" class="col s12 yellow">Test 6</div>
-    <div id="test-swipe-7" class="col s12 white">Test 7</div>
-    <div id="test-swipe-8" class="col s12 blue">Test 8</div>
-    <div id="test-swipe-9" class="col s12 orange">Test 9</div>
-    <div id="test-swipe-10" class="col s12 red">Test 10</div>
-    <div id="test-swipe-11" class="col s12 green">Test 11</div>
-    <div id="test-swipe-12" class="col s12 black">Test 12</div>
+    
+    <div id="test-swipe-2" class="col s12 red">
+        <div class="list-group">
+            <% @cards.where(card_id:'신한').find_each do |card| %>
+                
+                <%= image_tag card.avatar.url %>
+                
+                <%= link_to card.card_name, card_path(card), class: "list-group-item2" %>
+            <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-3" class="col s12 green">
+        <div class="list-group">
+          <% @cards.where(card_id:'삼성').find_each do |card| %>
+              
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+           <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-4" class="col s12 black">
+        <div class="list-group">
+            <% @cards.where(card_id:'롯데').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-5" class="col s12 orange">
+        <div class="list-group">
+            <% @cards.where(card_id:'현대').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-6" class="col s12 yellow">
+        <div class="list-group">
+            <% @cards.where(card_id:'씨티').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-7" class="col s12 white">
+        <div class="list-group">
+            <% @cards.where(card_id:'하나').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-8" class="col s12 blue">
+       <div class="list-group">
+            <% @cards.where(card_id:'우리').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-9" class="col s12 orange">
+        <div class="list-group">
+            <% @cards.where(card_id:'NH농협').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
+    <div id="test-swipe-10" class="col s12 red">
+        <div class="list-group">
+            <% @cards.where(card_id:'IBK기업').find_each do |card| %>
+                
+              <%= image_tag card.avatar.url %>
+      
+              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+             <% end %>
+        </div>
+    </div>
+    
   </div>
 </div>
     
