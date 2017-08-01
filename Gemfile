@@ -1,11 +1,18 @@
 source 'https://rubygems.org'
 
+# 차트용 gemfile (진우)
+gem 'chartkick'
+gem 'highcharts'
+gem 'highcharts-rails'
+gem 'hightop'
+
+gem 'carrierwave', '~> 1.0'
+gem "fog-aws"
 
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 gem 'kaminari'
-gem 'carrierwave', '~> 1.0'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

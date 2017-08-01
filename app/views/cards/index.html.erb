@@ -2,12 +2,6 @@
 <h4>당신의 카드사를 선택하세요!</h4>
 </div>
 
-  <% if user_signed_in? && current_user.has_role?(:admin) %>
-    <div class="jumbotron">
-      <%= link_to "새로운 카드 정보 등록", new_card_path, class: "btn btn-primary btn-lg" %>
-    </div>
-  <% end %>
-
 <!--카드사 선택-->
 <div class="card">
   <div class="card_select container col s6 offset-s6">
@@ -19,8 +13,6 @@
         <li class="tab col s3"><a href="#test-swipe-4">롯데</a></li>
         <li class="tab col s3"><a href="#test-swipe-5">현대</a></li>
         <li class="tab col s3"><a href="#test-swipe-6">씨티</a></li>
-      </div>
-      <div class="card_2">
         <li class="tab col s3"><a href="#test-swipe-7">하나</a></li>
         <li class="tab col s3"><a href="#test-swipe-8">우리</a></li>
         <li class="tab col s3"><a href="#test-swipe-9">NH농협</a></li>
@@ -29,114 +21,122 @@
     </ul>
   </div>
   
+     <% if user_signed_in? && current_user.has_role?(:admin) %>
+      <div class="jumbotron">
+        <%= link_to "새로운 카드 정보 등록", new_card_path, class: "btn btn-primary btn-lg" %>
+      </div>
+     <% end %>
+  
+
   <!--카드사 선택하면 나오는 카드들-->
   <div class="card_selected">
     <div id="test-swipe-1" class="col s12">
         <div class="list-group">
          <% @cards.where(card_id:'KB국민').find_each do |card| %>
               
-              <%= image_tag card.avatar.url %>
+             <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
            <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-2" class="col s12 red">
+    <div id="test-swipe-2" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'신한').find_each do |card| %>
                 
-                <%= image_tag card.avatar.url %>
+                 <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
                 
-                <%= link_to card.card_name, card_path(card), class: "list-group-item2" %>
+                <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
             <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-3" class="col s12 green">
+    <div id="test-swipe-3" class="col s12">
         <div class="list-group">
           <% @cards.where(card_id:'삼성').find_each do |card| %>
               
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
            <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-4" class="col s12 black">
+    <div id="test-swipe-4" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'롯데').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
              <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-5" class="col s12 orange">
+    <div id="test-swipe-5" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'현대').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
              <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-6" class="col s12 yellow">
+    <div id="test-swipe-6" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'씨티').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
              <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-7" class="col s12 white">
+    <div id="test-swipe-7" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'하나').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
              <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-8" class="col s12 blue">
+    <div id="test-swipe-8" class="col s12">
        <div class="list-group">
             <% @cards.where(card_id:'우리').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
              <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-9" class="col s12 orange">
+    <div id="test-swipe-9" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'NH농협').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
+              
              <% end %>
         </div>
     </div>
     
-    <div id="test-swipe-10" class="col s12 red">
+    <div id="test-swipe-10" class="col s12">
         <div class="list-group">
             <% @cards.where(card_id:'IBK기업').find_each do |card| %>
                 
-              <%= image_tag card.avatar.url %>
+               <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
       
-              <%= link_to card.card_name, card_path(card), class: "list-group-item2"%>
+              <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  그래프 보기 </a>
              <% end %>
         </div>
     </div>

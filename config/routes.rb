@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
   root 'cards#index'
+  get 'card/:id1/:id2' => 'charts#stat'
   
   devise_for :users
   resources :posts
   resources :cards
+  
+  # 차트용 (진우)
+  resources :charts, only: [] do
+    collection do
+      get 'results_by_barchart'
+      get 'results_by_piechart'
+    end
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
