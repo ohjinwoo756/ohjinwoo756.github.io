@@ -4,8 +4,18 @@ one:
   card_id: MyString
   card_name: MyString
   content: MyString
+  score1: 1
+  score2: 1
+  score3: 1
+  score4: 1
+  score5: 1
 
 two:
   card_id: MyString
   card_name: MyString
   content: MyString
+  score1: 1
+  score2: 1
+  score3: 1
+  score4: 1
+  score5: 1

@@ -5,6 +5,11 @@ class CreateCards < ActiveRecord::Migration
       t.string :card_name
       t.string :content
       t.belongs_to :user
+      t.integer :score1
+      t.integer :score2
+      t.integer :score3
+      t.integer :score4
+      t.integer :score5
 
       t.timestamps null: false
     end

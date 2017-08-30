@@ -1,3 +1,169 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* #containerMaxWidth */ #container {max-width: 800px;}
+/* #containerPaddingTop */ #container {padding-top: 0px;}
+/* #containerPaddingRight */ #container {padding-right: 0px;}
+/* #containerPaddingBottom */ #container {padding-bottom: 0px;}
+/* #containerPaddingLeft */ #container {padding-left: 0px;}
+/* #two_columnPaddingTop */ #two_column {padding-top: 20px;}
+/* #two_columnPaddingRight */ #two_column {padding-right: 20px;}
+/* #two_columnPaddingBottom */ #two_column {padding-bottom: 40px;}
+/* #two_columnPaddingLeft */ #two_column {padding-left: 20px;}
+/* #container2BgColor */ #container2 {background-color: #febe29;}
+/* #container2FontColor */ #container2 {color: #ffffff;}
+/* #container2PaddingTop */ #container2 {padding-top: 20px;}
+/* #container2PaddingRight */ #container2 {padding-right: 20px;}
+/* #container2PaddingBottom */ #container2 {padding-bottom: 20px;}
+/* #container2PaddingLeft */ #container2 {padding-left: 20px;}
+/* #container3MaxWidth */ #container3 {max-width: 800px;}
+/* #containerMarginBottom */ #container {margin-bottom: 60px;}
+/* #container5BgImage */ #container5 {background-image: url("https://d2xcq4qphg1ge9.cloudfront.net/assets/19/3289146/original_diag-stripes.png");}
+/* #container6FontColor */ #container6 {color: #ffffff;}
+/* #container6MaxWidth */ #container6 {max-width: 1024px;}
+/* #rich_text3FontAlignment */ #rich_text3 .ss_box_content {text-align: center;}
+/* #containerBgRepeat */ #container {background-repeat: no-repeat;}
+/* #rich_text2FontAlignment */ #rich_text2 .ss_box_content {text-align: center;}
+/* #rich_textPaddingTop */ #rich_text {padding-top: 22%;}
+/* #rich_textFontAlignment */ #rich_text .ss_box_content {text-align: center;}
+/* #two_columnBorderStyle */ #two_column {border-style: solid;}
+/* #two_columnBorderColor */ #two_column {border-color: #febe29;}
+/* #two_columnBorderWidthTop */ #two_column {border-top-width: 0px;}
+/* #two_columnBorderWidthBottom */ #two_column {border-bottom-width: 4px;}
+/* #two_columnBorderWidthLeft */ #two_column {border-left-width: 0px;}
+/* #two_columnBorderWidthRight */ #two_column {border-right-width: 0px;}
+/* #sharePaddingTop */ #share {padding-top: 40px;}
+/* #two_column2BorderWidthTop */ #two_column2 {border-top-width: 0px;}
+/* #two_column2BorderWidthBottom */ #two_column2 {border-bottom-width: 4px;}
+/* #two_column2BorderWidthLeft */ #two_column2 {border-left-width: 0px;}
+/* #two_column2BorderWidthRight */ #two_column2 {border-right-width: 0px;}
+/* #rich_text4FontAlignment */ #rich_text4 .ss_box_content {text-align: right;}
+/* #rich_text4PaddingTop */ #rich_text4 {padding-top: 0px;}
+/* #rich_text4PaddingRight */ #rich_text4 {padding-right: 0px;}
+/* #rich_text4PaddingBottom */ #rich_text4 {padding-bottom: 0px;}
+/* #rich_text4PaddingLeft */ #rich_text4 {padding-left: 0px;}
+/* #two_column2MaxWidth */ #two_column2 {max-width: 1100px;}
+/* #image2FontAlignment */ #image2 .ss_box_content {text-align: left;}
+/* #containerMarginTop */ #container {margin-top: 100px;}
+
+body {
+    color: black !important;
+}
+
+.pagination {
+    background-color: #febe29;
+    box-shadow: none;
+    text-align: center;
+    color: white; 
+    
+    a:hover{
+        text-decoration: underline;
+        background-color: transparent;
+        font-weight:bold;
+        color: white;
+    }
+    
+    a:visited {
+        color: white;
+    }
+    
+    a:link {
+        color: white;
+    }
+}
+
+.ss_image img {
+    max-width: 250px !important;
+}
+
+#container2 {
+    padding: 0;
+}
+
+#form {
+    padding: 0;
+}
+
+#form_submit_block {
+    text-align: right;
+}
+
+.text_vertical{
+    vertical-align: text-top !important;
+    text-align: left;
+}
+
+.text_right{
+    text-align: right;
+}
+
+.text_center{
+    text-align: center;
+}
+
+table {
+    border-bottom: thick dotted black !important;
+    width: 100%;
+    color: black;
+}
+
+#blur{
+    font-size: 1rem;
+}
+
+label {
+    font-size: 2rem !important;
+}
+
+textarea{
+    height: 300px !important;
+    background-color: transparent;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.field{
+    text-align: left;
+}
+
+#post_title, #post_content{
+    font-size: 1.6rem !important;
+    width: 100%;
+    color: black !important;
+}
+
+#post_title {
+    border: none;
+    border-bottom: 1px solid rgb(169, 169, 169);
+    height: 2.5rem !important;
+}
+
+.container {
+    width: 80% !important;
+}
+
+#container {
+    text-align: center !important;
+}
+
+#container2 {
+    height: 104px;
+}
+
+th {
+    border-bottom: 1px solid black !important;
+}
+
+.height_20px {
+    height: 40px !important;
+    vertical-align: middle;
+}
+
+td {
+    vertical-align: middle !important;
+}

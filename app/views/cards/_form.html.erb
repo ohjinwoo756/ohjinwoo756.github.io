@@ -1,3 +1,4 @@
+<br><br><br><br>
 <%= flash[:alert] %>
 <%= form_for(@card) do |f| %>
     카드사
@@ -6,9 +7,15 @@
     <%= f.text_field :card_name, class: "form-control", placeholder: "카드 이름을 입력해주세요" %><br>
     상세 카드 혜택:
     <%= f.text_area :content, class: "form-control",placeholder: "상세한 카드 혜택을 입력해주세요" %><br>
+
+    주유 점수: <%= f.number_field :score1, class: "form-control", placeholder: "주유 점수를 입력해주세요" %><br>
+    쇼핑 점수: <%= f.number_field :score2, class: "form-control", placeholder: "쇼핑 점수를 입력해주세요" %><br>
+    외식 점수: <%= f.number_field :score3, class: "form-control", placeholder: "외식 점수를 입력해주세요" %><br>
+    캐시백 점수: <%= f.number_field :score4, class: "form-control", placeholder: "캐시백 점수를 입력해주세요" %><br>
+    마일리지 점수: <%= f.number_field :score5, class: "form-control", placeholder: "마일리지 점수를 입력해주세요" %><br>
     
     <%= f.file_field :avatar %><br>
     
     <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit "작성하기", class: "btn btn-success"%>
+    <%= f.submit "작성하기", class: "btn btn-success"%><br><br>
 <% end %>

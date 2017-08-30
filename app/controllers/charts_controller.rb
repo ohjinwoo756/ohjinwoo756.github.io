@@ -4,7 +4,28 @@ class ChartsController < ApplicationController
   @@bank_id = 0
   @@card_id = 0
   
+    # 차트 출력
+  def index
+    @cards = Card.all
+    
+    @@bank_id = params[:id1]
+    @@card_id = params[:id2]
+    
+    @bankid = params[:id1]
+    @cardid = params[:id2]
+    
+    @bankname = " "
+    @cardname = " "
+    Card.all.each do |c|
+      if (c.card_id == @bankid && c.card_name == @cardid)
+        @bankname = c.card_id
+        @cardname = c.card_name
+      end
+    end
+  end
+  
   # 카드 통계치 그래프 출력 컨트롤러
+  # 지금은 안 쓰이고 index가 대신 담당
   def stat
     @cards = Card.all
     
@@ -30,7 +51,7 @@ class ChartsController < ApplicationController
     result = {}
     Card.all.each do |c|
       if (c.card_id == @@bank_id && c.card_name == @@card_id)
-        score = [1, 2, 3, 4, 5]
+        score = [c.score1, c.score2, c.score3, c.score4, c.score5]
         0.upto(4) do |i|
             result[arr[i]] = score[i]
         end
@@ -45,7 +66,7 @@ class ChartsController < ApplicationController
     result = {}
     Card.all.each do |c|
       if (c.card_id == @@bank_id && c.card_name == @@card_id)
-        score = [1, 2, 3, 4, 5]
+        score = [c.score1, c.score2, c.score3, c.score4, c.score5]
         0.upto(4) do |i|
             result[arr[i]] = score[i]
         end
@@ -53,5 +74,5 @@ class ChartsController < ApplicationController
     end
     render json: result
   end
-  
+
 end

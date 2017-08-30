@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Autonomy by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Autonomy by TEMPLATED</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+		
+
+
+		<div id="banner">
+			
+		</div>
+
+		<div id="featured">
+			<div class="card">
+				
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+				  <li class="nav-item">
+				    <a class="nav-link active" data-toggle="tab" href="#c1" role="tab" aria-controls="c1">신한</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c2" role="tab" aria-controls="c2">현대</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c3" role="tab" aria-controls="c3">삼성</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c4" role="tab" aria-controls="c4">롯데</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c5" role="tab" aria-controls="c5">씨티</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c6" role="tab" aria-controls="c6">하나</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c7" role="tab" aria-controls="c7">우리</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c8" role="tab" aria-controls="c8">KB국민</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c9" role="tab" aria-controls="c9">NH농협</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" data-toggle="tab" href="#c10" role="tab" aria-controls="c10">IBK기업</a>
+				  </li>
+				</ul>
+				
+				<div class="tab-content">
+				  <div class="tab-pane active" id="c1" role="tabpanel">
+				  	<% @cards.where("card_id = '신한'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c2" role="tabpanel">
+				  	<% @cards.where("card_id = '현대'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c3" role="tabpanel">
+				  	<% @cards.where("card_id = '삼성'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c4" role="tabpanel">
+				  	<% @cards.where("card_id = '롯데'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c5" role="tabpanel">
+				  	<% @cards.where("card_id = '씨티'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c6" role="tabpanel">
+				  	<% @cards.where("card_id = '하나'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c7" role="tabpanel">
+				  	<% @cards.where("card_id = '우리'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c8" role="tabpanel">
+				  	<% @cards.where("card_id = 'KB국민'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c9" role="tabpanel">
+				  	<% @cards.where("card_id = 'NH농협'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				  <div class="tab-pane" id="c10" role="tabpanel">
+				  	<% @cards.where("card_id = 'IBK기업'").each do |c| %>
+				  		<%= image_tag c.avatar.url, :size => '260x180' %><br>
+				  	<% end %>
+				  </div>
+				</div>
+			</div>
+			
+			<% if user_signed_in? && current_user.has_role?(:admin) %>
+		      <div class="jumbotron">
+		        <%= link_to "새로운 카드 정보 등록", new_card_path, class: "btn btn-primary btn-lg" %>
+		      </div>
+		     <% end %>
+
+			<div class="container">
+				<div class="row">
+
+					<div class="3u">
+						<section>
+							
+							<a href="#" class="image full">
+								
+							<% @cards.where(card_id:'신한').find_each do |card| %>
+                
+                                 <p> <%= image_tag card.avatar.url, :size => '260x180' %> </p>
+                                    
+                                <a href="/card/<%=card.card_id%>/<%=card.card_name%>">  <%= card.card_name %>  </a>
+                            <% end %>
+							<header>
+								<h2>Etiam posuere</h2>
+							</header>
+										
+						</section>
+					</div>
+
+					<!--<div class="3u">-->
+					<!--	<section>-->
+					<!--		<a href="#" class="image full"><img src="/app/assets/images/pics03.jpg" alt=""></a>-->
+					<!--		<header>-->
+					<!--			<h2>Fusce ultrices</h2>-->
+					<!--		</header>-->
+					<!--		<p>Pellentesque tristique ante. Sed vel tellus. Curabitur sem urna, consequat suscipit mattis placerat, nulla.</p>				-->
+					<!--	</section>-->
+					<!--</div>-->
+					
+					<!--<div class="3u">-->
+					<!--	<section>-->
+					<!--		<a href="#" class="image full"><img src="/app/assets/images/pics03.jpg" alt=""></a>-->
+					<!--		<header>-->
+					<!--			<h2>Fusce ultrices</h2>-->
+					<!--		</header>-->
+					<!--		<p>Pellentesque tristique ante. Sed vel tellus. Curabitur sem urna, consequat suscipit mattis placerat, nulla.</p>				-->
+					<!--	</section>-->
+					<!--</div>-->
+					
+					<!--<div class="3u">-->
+					<!--	<section>-->
+					<!--		<a href="#" class="image full"><img src="/app/assets/images/pics03.jpg" alt=""></a>-->
+					<!--		<header>-->
+					<!--			<h2>Fusce ultrices</h2>-->
+					<!--		</header>-->
+					<!--		<p>Pellentesque tristique ante. Sed vel tellus. Curabitur sem urna, consequat suscipit mattis placerat, nulla.</p>				-->
+					<!--	</section>-->
+					<!--</div>-->
+					
+				
+					
+		<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				Design: <a href="http://templated.co">멋쟁이사자처럼5기 돈벌자팀</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+			</div>
+		</div>
+		
+	<script>
+	  $(function () {
+	    $('#myTab a:last').tab('show')
+	  })
+	</script>
+	</body>
+</html>

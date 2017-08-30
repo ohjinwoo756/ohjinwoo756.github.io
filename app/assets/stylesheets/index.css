@@ -5,6 +5,12 @@
 
 .card{
     display: flex;
+    text-align: center;
     flex-direction: column;
 }
+
+.bank {
+    text-align: center;
+}
+
 

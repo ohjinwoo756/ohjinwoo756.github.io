@@ -2,14 +2,7 @@ module StatisticsHelper
 
     # BAR CHART 모양 설정
     def results_by_barchart
-        bar_chart results_by_barchart_charts_path, height: '650px', library: {
-          title: {
-              text: '혜택 항목별 점수',
-              x: 35,
-              margin: 10,
-              align: "left",
-              style: { "color": "#009933", "fontSize": "30px" }
-          },
+        bar_chart results_by_barchart_charts_path, height: '500px', library: {
           chart: {
                 backgroundColor: "#fbfcc3",
                 borderRadius: 50,
@@ -17,7 +10,8 @@ module StatisticsHelper
                 align: "center",
                 borderColor: "#ff9900",
                 shadow: true,
-                marginTop: 100,
+                marginTop: 30,
+                marginBottom: 90
           },
           tooltip: {valueSuffix: '점',
               backgroundColor: "rgba(234,245,1,1)",
@@ -62,7 +56,7 @@ module StatisticsHelper
     
     # PIE CHART 모양 설정
     def results_by_piechart
-      pie_chart results_by_piechart_charts_path, height: '650px', library: {
+      pie_chart results_by_piechart_charts_path, height: '500px', library: {
           chart: {
             backgroundColor: "#fbfcc3",
             borderRadius: 50,
@@ -70,13 +64,8 @@ module StatisticsHelper
             align: "center",
             borderColor: "#ff9900",
             shadow: true,
-          },
-          title: {
-              text: '항목별 비율 비교',
-              x: 35,
-              margin: 10,
-              align: "left",
-              style: { "color": "#009933", "fontSize": "30px" }
+            marginTop: 30,
+            marginBottom: 40
           },
           tooltip: {
               valueSuffix: '점',

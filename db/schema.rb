@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 20170727143701) do
     t.string   "card_name"
     t.string   "content"
     t.integer  "user_id"
+    t.integer  "score1"
+    t.integer  "score2"
+    t.integer  "score3"
+    t.integer  "score4"
+    t.integer  "score5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "avatar"

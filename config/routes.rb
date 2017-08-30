@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'cards#index'
-  get 'card/:id1/:id2' => 'charts#stat'
+  get '/card/:id1/:id2' => 'charts#index'
+  get '/cards/:id1/:id2' => 'cards#show'
   
   devise_for :users
   resources :posts

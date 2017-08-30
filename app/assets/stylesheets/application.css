@@ -16,3 +16,8 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+   background-color: #ffffff !important;
+}
+

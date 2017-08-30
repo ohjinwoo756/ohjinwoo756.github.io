@@ -1,23 +1,50 @@
-<div class="jumbotron">
-  <h1>카드 혜택 상세보기</h1>
-  <%= flash[:alert] %>
-</div>
+<head>
+    <link type="text/css" rel="stylesheet" href="show.css"/>
+</head>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p>카드사 <%=@card.card_id%></p>
-    <h3 class="panel-title">카드이름 <%=@card.card_name%></h3>
-  </div>
-  <div class="panel-body">
-    상세 카드 혜택: <%=@card.content%>
+<br><br><br>
+
+<div class = "container">
+
+
+  <div class="row">
+    	<div class="col-lg-12">
+						<h1 class="page-header">카드 혜택 상세보기
+         <%= flash[:alert] %>
+         <small>카드사: <%= @card.card_id %> | 카드이름: <%= @card.card_name %></small>
+         </h1>
+						
+		  </div>
   </div>
   
-    <div class="container">
-       <%= image_tag @card.avatar.url %>
-    </div>
+  <div class="row">
+    <div class="col-md-6">
+        <div class="container" align="center">
+           <%= image_tag @card.avatar.url, :size => '500x350' %>
+        </div>
     
- 
-      <%= link_to '수정', edit_card_path(@card), class: "btn btn-default btn-sm"%>
-      <%= link_to '삭제', card_path(@card), method: :delete, data: {confirm: "정말 삭제하시겠습니까?"}, class: "btn btn-default btn-sm"%>
-  
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group has-success has-feedback">
+           <h3>상세 카드 혜택</h3>
+           <br>
+           <p>
+              <%= @card.content %> 
+           </p>
+           
+           <p>
+               <% if user_signed_in? && current_user.has_role?(:admin) %>
+                <%= link_to '수정', edit_card_path(@card), class: "btn btn-default" %>
+                <%= link_to '삭제', card_path(@card), method: :delete, data: {confirm: "정말 삭제하시겠습니까?"}, class: "btn btn-default"%>
+               <%end%>
+           </p>
+                     
+           </div>
+                  
+                      
+         
+        </div>
+    </div>           
+ </div>
 </div>

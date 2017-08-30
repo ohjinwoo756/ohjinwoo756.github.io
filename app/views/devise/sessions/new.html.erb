@@ -1,26 +1,58 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spectre sign up form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+      <link rel="stylesheet" href="css/style1.css">
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  
+</head>
+
+<body>
+  <div class="signup__container">
+    <div class="container__child signup__thumbnail">
+      
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="container__child signup__form">
+      <div class="form-container">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+          <div class="m-t-lg">
+            <ul class="list-inline">
+              <li>
+                <% if devise_mapping.rememberable? -%>
+                  <div class="field">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                <% end -%>
+              </li>
+              <li>
+                <%= f.submit "Log in" %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</body>
+</html>
 
 <%= render "devise/shared/links" %>
+

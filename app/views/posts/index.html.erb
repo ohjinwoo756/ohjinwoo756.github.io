@@ -1,34 +1,77 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Writer</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.email %></td>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
-
-
-<%= paginate @posts %>
+<div class="ss_box ss_form ss_even" data-widget="form" id="form">
+  <div class="ss_box_content ss_form_content" id="content_form">
+    <div id="wrapper">
+      <div class="ss_container main" data-widget="container" id="container">
+        <div class="ss_container_content">
+          <div class="ss_box ss_rich_text ss_odd" data-widget="rich_text2" id="rich_text2">
+            <div class="ss_container ss_layout ss_layout_2col container_bg" data-widget="two_column" id="two_column">
+              <div class="ss_container_content ss_layout_content ss_layout_2col_content">
+                <div class="ss_container ss_layout_column" data-widget="column" id="column" style="width: 50%;">
+                  <div class="ss_container_content">
+                    <div class="ss_box ss_image ss_odd" data-widget="image" id="image">
+                      <div class="ss_box_content ss_image_content ss_align_left" id="content_image">
+                        <div class="ss_image_container">
+                          <%=image_tag("review.png", alt: "Example Image")%>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ss_container ss_layout_column" data-widget="column2" id="column2" style="width: 50%;">
+                  <div class="ss_container_content">
+                    <div class="ss_box ss_rich_text ss_even" data-widget="rich_text" id="rich_text">
+                      <div class="ss_box_content ss_rich_text_content" id="content_rich_text">
+                        <p id="notice"><%= notice %></p>
+                        <div class="ss_box_content ss_rich_text_content" id="content_rich_text2">
+                          <h1>Review Post!</h1>
+                          <p>Please your opinion for us.</p>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ss_box ss_form ss_even" data-widget="form" id="form">
+            
+              <table>
+                <thead>
+                  <tr>
+                    <th width="40px;"></th>
+                    <th class="text_center">Title</th>
+                    <th class="text_center" width="200px;">Writer</th>
+                    <th class="text_center" width="100px;">Date</th>
+                  </tr>
+                </thead>
+              
+                <tbody>
+                  <% @posts.each do |post| %>
+                    <tr class="height_20px">
+                      <td><%= post.id %></td>
+                      <td><%= link_to post.title, post %></td>
+                      <td><%= post.email %></td>
+                      <td class="text_center"><%= post.created_at.strftime("%Y-%m-%d") %></td>
+                      
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <br>
+                <div class="field_block submit_field_block" id="form_submit_block">
+                  <a href="/posts/new" id="link_1_links">New Post</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ss_container" data-widget="container2" id="container2">
+    <div class="ss_container_content">
+      <div class="ss_container" data-widget="container3" id="container3">
+        <div class="ss_container_content">
+          <%= paginate @posts %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,19 +1,57 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Writer:</strong>
-  <%= @post.email %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <!-- 옮길거 -->
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="WoWCHK956p5V12+DC2EpjVt6sOk+tcRRZA+7lTQGfUI=">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  
+  <meta content="2017-07-19 10:13:07 -0700" name="revised">
+  <meta name="ss-token" content="GVXGEZBZLLJvthtIR4Z7Sw==">
+  <meta name="ss-timestamp" content="1501650968">
+  
+  <link href="https://d2xcq4qphg1ge9.cloudfront.net/themes/155264/campaign/5206470_9824_1500484368.css" media="screen" rel="stylesheet" type="text/css">
+  <!-- /옮길거 -->
+  
+<div class="ss_box ss_form ss_even" data-widget="form" id="form">
+  <div class="ss_box_content ss_form_content" id="content_form">
+    <div id="wrapper">
+      <div class="ss_container main" data-widget="container" id="container">
+        <div class="ss_container_content">
+          <div class="ss_box ss_rich_text ss_odd" data-widget="rich_text2" id="rich_text2">
+            <div class="ss_container ss_layout ss_layout_2col container_bg" data-widget="two_column" id="two_column">
+              <div class="ss_container_content ss_layout_content ss_layout_2col_content">
+                <div class="ss_box_content ss_rich_text_content" id="content_rich_text">
+                  <p id="notice"><%= notice %></p>
+                </div>
+              </div>
+          </div>
+          <div class="ss_box ss_form ss_even" data-widget="form" id="form">
+            <div class="ss_box_content ss_form_content" id="content_form">
+              <table>
+                <thead>
+                  <tr>
+                    <th><%= @post.title %></th>
+                    <th class="text_right" id="blur"><%= @post.created_at.strftime("%Y.%m.%d") %></th>
+                  </tr>
+                </thead>
+              
+                <tbody>
+                  
+                    <tr>
+                      <td class="text_vertical" height="50px;">(Written_by) <%= @post.email %></td>
+                    </tr>
+                   <tr>
+                      <td class="text_vertical" height="300px;"><%= @post.content %></td>
+                    </tr>
+                  <tr>
+                    <td class="text_right" colspan="2"><%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Back', posts_path %></td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

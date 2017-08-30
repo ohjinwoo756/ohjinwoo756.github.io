@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
  before_action :set_card, only: [:show, :edit, :destroy, :update]
- 
+   load_and_authorize_resource
+
     def index
       @cards = Card.all
     end
@@ -29,9 +30,11 @@ class CardsController < ApplicationController
     end
     
     def edit
+      @card = Card.where("id = '#{params[:id1]}'")
     end
 
     def show
+      @card = Card.find_by(card_id: params[:id1], card_name: params[:id2])
     end
     
     def destroy
@@ -44,10 +47,11 @@ class CardsController < ApplicationController
     
     private
     def card_params
-        params.require(:card).permit(:card_id, :card_name, :content, :avatar)
+        params.require(:card).permit(:card_id, :card_name, :content, 
+        :score1, :score2, :score3, :score4, :score5, :avatar)
     end
     
     def set_card
-        @card = Card.find(params[:id])
+        @card = Card.find_by(card_id: params[:id])
     end
 end
